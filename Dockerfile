@@ -1,7 +1,7 @@
 # To build: docker build -t 3pi-workflow:latest .
 FROM ubuntu:latest
 
-MAINTANER Jean Vicelli "jean.vicelli@digitalglobe.com"
+MAINTAINER Jean Vicelli "jean.vicelli@digitalglobe.com"
 
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
