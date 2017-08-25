@@ -1,0 +1,26 @@
+########################################################################################################
+# Config for AWS access
+[AWSConfig]
+
+aws_access_key = AKIAJ3AOPLEFRJQ6T6HA
+
+aws_access_key_secret =
+
+aws_region = us-east-2
+
+
+#######################################################################################################################
+# Config for SQS/Celery queue system.
+[CeleryConfig]
+
+sqs_queue_name = bsachs3pi
+
+results_table = celery_results
+
+
+#######################################################################################################################
+# Run in debug mode to bypass Celery for debugging
+[DebugConfig]
+
+# database instance
+debug_mode = False
