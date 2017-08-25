@@ -17,4 +17,5 @@ COPY . /app
 
 # ENTRYPOINT [ "python" ]
 
-CMD [ "run_pipeline.sh" ]
+RUN chmod +x run_pipeline.sh
+CMD [ "./run_pipeline.sh" ]
