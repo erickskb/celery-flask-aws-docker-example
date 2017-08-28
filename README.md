@@ -43,3 +43,24 @@ export PYCURL_SSL_LIBRARY=nss
 pip install pycurl  --no-cache-dir
 
 ```
+
+Docker
+-----
+This app is designed to deploy via Docker.  To run Docker locally, follow the instructions found at https://docs.docker.com/get-started
+To exercise the Docker image locally, follow these basic steps: 
+1. Install Docker per above instructions
+2. Run the Docker daemon: 
+```
+dockerd
+```
+3. Build: 
+```
+docker build -t 3pi-workflow:latest .
+```
+4. Run: 
+```
+docker run -d -p 8000:8000 3pi-workflow
+```
+5. Verify by doing a GET against http://localhost:8000/status
+
+Note that sudo may be required for the above commands, depending on setup.
