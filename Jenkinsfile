@@ -12,6 +12,12 @@ node("DG") {
          * docker build on the command line */
         app = docker.build("3pi-workflow")
     }
+    
+    stage('Docker push') {
+        docker.withRegistry('https://465688003075.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:AWS-3pi-workflow-docker') {
+        docker.image('3pi-workflow').push('latest')
+        }
+    }
 
     stage('Test image') {
 
