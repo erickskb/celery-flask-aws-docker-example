@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-python start_celery.py &
+python3 start_celery.py &
 gunicorn --config gunicorn.conf --timeout 180 workflow_engine_gunicorn:app
