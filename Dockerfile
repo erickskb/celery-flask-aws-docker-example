@@ -1,4 +1,6 @@
 # To build: docker build -t 3pi-workflow:latest .
+# To run: docker run -d -p 8000:8000 3pi-workflow
+# To test: http://localhost:8000/status
 FROM ubuntu:latest
 
 MAINTAINER Jean Vicelli "jean.vicelli@digitalglobe.com"
