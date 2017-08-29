@@ -1,4 +1,4 @@
-node("DG") {
+node{
 
     def app
 
