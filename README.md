@@ -1,6 +1,6 @@
 Celery-Flask-AWS-docker Example
-
 =======
+
 This app is an example of a Celery application using Flask as its entry point.  For kicks it uses AWS resources as backing and deploys via Docker
 
 Config
