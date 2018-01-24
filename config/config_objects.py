@@ -53,6 +53,8 @@ class CallbackTimeoutConfig:
         try:
             self.retry_attempts = config_parser.getint('CallbackTimeoutConfig', 'retry_attempts')
             self.retry_interval = config_parser.getint('CallbackTimeoutConfig', 'retry_interval')
+            self.callback_dns = config_parser.get('CallbackTimeoutConfig', 'callback_dns')
         except Exception:
             self.retry_attempts = 3
             self.retry_interval = 10
+            self.callback_dns = None

@@ -31,9 +31,13 @@ def callback(callback_url, result_json, logger_t):
     attempts = 1
     done = False
 
+    valid_headers = {"Content-type": "application/json",
+                     "HOST": "k-spike-listen.apps.cfdev1.ux.dg.local/callback"}
+    callback_url = "http://{}/callback".format(callback_config.callback_dns)
+
     while attempts <= callback_config.retry_attempts and done is False:
         try:
-            response = requests.post(callback_url, json.dumps(result_json), headers={"Content-type": "application/json"},
+            response = requests.post(callback_url, json.dumps(result_json), headers=valid_headers,
                                      verify=False, timeout=30)
             if response.status_code in [200, 202, 201, 204]:
                 done = True

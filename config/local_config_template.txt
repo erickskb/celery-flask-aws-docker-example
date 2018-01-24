@@ -52,3 +52,6 @@ retry_attempts = 3
 
 # wait this long between tries (in seconds)
 retry_interval = 10
+
+# Cluster dns
+callback_dns =
