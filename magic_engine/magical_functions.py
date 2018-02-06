@@ -1,10 +1,10 @@
 import json
 import uuid
-import socket
+
 
 from celery.utils.log import get_task_logger
-import requests
 import time
+import requests
 
 from celery_app.celery_app import worker_app
 from config.config_objects import CallbackTimeoutConfig
@@ -34,8 +34,10 @@ def make_magic(message, callback_url, request_id):
 def callback(callback_url, result_json, logger_t):
     attempts = 1
     done = False
+
     valid_headers = {"Content-type": "application/json",
                      "HOST": ""}
+
     callback_url = "http://{}/callback".format(callback_config.callback_dns)
 
     while attempts <= callback_config.retry_attempts and done is False:
