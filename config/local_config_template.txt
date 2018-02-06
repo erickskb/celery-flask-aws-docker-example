@@ -2,21 +2,11 @@
 # Config for AWS access
 [AWSConfig]
 
-aws_access_key = AKIAJ3AOPLEFRJQ6T6HA
+aws_access_key =
 
 aws_access_key_secret =
 
 aws_region = us-east-2
-
-
-#######################################################################################################################
-# Config for SQS/Celery queue system.
-[CeleryConfig]
-
-sqs_queue_name = bsachs3pi
-
-results_table = celery_results
-
 
 #######################################################################################################################
 # Run in debug mode to bypass Celery for debugging
@@ -24,3 +14,44 @@ results_table = celery_results
 
 # database instance
 debug_mode = False
+
+#######################################################################################################################
+# Config for RabbitMQ/Celery queue system.
+[QueueConfig]
+
+# RabbitMQ instance
+rabbit_host =
+
+
+# RabbitMQ username
+rabbit_user =
+
+
+# RabbitMQ password
+rabbit_password =
+
+
+# RabbitMQ virtual host
+rabbit_vhost =
+
+
+# Queue to consume from
+rabbit_queue =
+
+
+# Wait time to kill worker
+wait_time =
+
+#######################################################################################################################
+# Config for MSS result callback timeouts.  Similar to above, this is for local testing and evaluation only.  Production
+# deploys will default to the hardcoded values shown in the config template.
+[CallbackTimeoutConfig]
+
+# retry this many times
+retry_attempts = 3
+
+# wait this long between tries (in seconds)
+retry_interval = 10
+
+# Cluster dns
+callback_dns =
