@@ -1,0 +1,18 @@
+To run celery workers as daemons:
+
+1. Copy config/celeryd_init to etc/init.d/celeryd
+2. Setup permissions on /etc/init.d/celeryd:
+
+sudo chmod 755 /etc/init.d/celeryd
+sudo chown root:root /etc/init.d/celeryd
+
+3. Create configuration file:
+
+Copy config/celeryd to etc/default/celeryd
+
+4. Set config values appropriately
+
+5. Run sudo /etc/init.d/celeryd start/stop/restart
+
+Reference:
+https://pythad.github.io/articles/2016-12/how-to-run-celery-as-a-daemon-in-production
